@@ -1,18 +1,24 @@
 import { MainNav } from "./main-nav";
+import { TogleTheme } from "./togleTheme";
 import { UserNav } from "./user-nav";
 
 export function MainLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <div className="hidden flex-col md:flex">
+    <div>
       <div className="border-b">
-        <div className="flex h-16 items-center px-8">
-          <UserNav />
-          <MainNav className="mx-6" />
+        <div className="flex justify-center h-16 md:px-8 md:justify-between">
+          <div className="flex items-center">
+            <UserNav />
+            <MainNav className="mx-6 md:mx-6" />
+          </div>
+          <div className="flex items-center">
+            <TogleTheme />
+          </div>
         </div>
       </div>
-      {children}
+      <div className="p-4 pt-3 md:pt-6 md:p-8">{children}</div>
     </div>
   );
 }

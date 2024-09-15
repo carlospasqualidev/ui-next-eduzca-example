@@ -12,7 +12,10 @@ export function MainNav({
 
   return (
     <nav
-      className={cn("flex items-center space-x-4 lg:space-x-6", className)}
+      className={cn(
+        "flex items-center space-x-2 md:space-x-4 lg:space-x-6",
+        className
+      )}
       {...props}
     >
       <Link
@@ -30,22 +33,6 @@ export function MainNav({
         } hover:text-primary`}
       >
         Cursos
-      </Link>
-      <Link
-        href="/products"
-        className={`text-sm font-medium transition-colors ${
-          pathname === "/products" ? "text-primary" : "text-muted-foreground"
-        } hover:text-primary`}
-      >
-        Products
-      </Link>
-      <Link
-        href="/settings"
-        className={`text-sm font-medium transition-colors ${
-          pathname === "/settings" ? "text-primary" : "text-muted-foreground"
-        } hover:text-primary`}
-      >
-        Settings
       </Link>
     </nav>
   );

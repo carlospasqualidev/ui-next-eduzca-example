@@ -2,6 +2,7 @@
 
 import * as React from "react";
 import { CalendarIcon } from "@radix-ui/react-icons";
+import { ptBR } from "date-fns/locale";
 
 import { cn } from "@/lib/utils";
 
@@ -31,7 +32,7 @@ export function CalendarDateRangePicker({
             id="date"
             variant={"outline"}
             className={cn(
-              "w-[260px] justify-start text-left font-normal",
+              "justify-start text-left font-normal",
               !date && "text-muted-foreground"
             )}
           >
@@ -39,13 +40,14 @@ export function CalendarDateRangePicker({
             {date?.from ? (
               date.to ? (
                 <>
-                  {date.from.toDateString()} - {date.to.toDateString()}
+                  {date.from.toLocaleDateString()} -{" "}
+                  {date.to.toLocaleDateString()}
                 </>
               ) : (
-                date.from.toDateString()
+                date.from.toLocaleDateString()
               )
             ) : (
-              <span>Pick a date</span>
+              <span>Selecione uma</span>
             )}
           </Button>
         </PopoverTrigger>
@@ -57,6 +59,7 @@ export function CalendarDateRangePicker({
             selected={date}
             onSelect={setDate}
             numberOfMonths={2}
+            locale={ptBR}
           />
         </PopoverContent>
       </Popover>
