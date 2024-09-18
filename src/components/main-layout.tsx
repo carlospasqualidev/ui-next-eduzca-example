@@ -1,5 +1,6 @@
 import { MainNav } from "./main-nav";
 import { TogleTheme } from "./togleTheme";
+import { Separator } from "./ui/separator";
 import { UserNav } from "./user-nav";
 
 export function MainLayout({
@@ -7,7 +8,7 @@ export function MainLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <div>
-      <div className="border-b">
+      <div>
         <div className="flex justify-center h-16 md:px-8 md:justify-between">
           <div className="flex items-center">
             <UserNav />
@@ -18,7 +19,8 @@ export function MainLayout({
           </div>
         </div>
       </div>
-      <div className="p-4 pt-3 md:pt-6 md:p-8">{children}</div>
+      <Separator />
+      <div className="p-4 pt-3 md:px-8 md:pt-8">{children}</div>
     </div>
   );
 }

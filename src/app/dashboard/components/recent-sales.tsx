@@ -178,28 +178,29 @@ const userRanking = [
 
 export function UserPoints() {
   return (
-    <Card className="col-span-3">
+    <Card className="col-span-4 md:col-span-3">
       <CardHeader>
         <CardTitle>Ranking de usuários</CardTitle>
         <CardDescription>
-          Total de {userRanking.length} usuários.
+          Total de pontos acumulados por usuário.
         </CardDescription>
       </CardHeader>
       <CardContent>
         <ScrollArea className="h-80">
           {userRanking.map((user) => (
-            <div key={user.name} className="flex items-center py-2 pr-3">
+            <div key={user.name} className="flex items-center py-2 md:pr-3">
               <Avatar className="h-9 w-9">
                 <AvatarImage alt="Avatar" />
                 <AvatarFallback>{user.acronym}</AvatarFallback>
               </Avatar>
+
               <div className="ml-4 space-y-1">
                 <p className="text-sm font-medium leading-none">{user.name}</p>
                 <p className="text-sm text-muted-foreground">
                   {user.description}
                 </p>
               </div>
-              <div className="ml-auto font-medium">{user.value} Pontos</div>
+              <div className="ml-auto font-medium">{user.value}</div>
             </div>
           ))}
         </ScrollArea>
