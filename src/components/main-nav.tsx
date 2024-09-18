@@ -34,6 +34,15 @@ export function MainNav({
       >
         Cursos
       </Link>
+
+      <Link
+        href="/classes"
+        className={`text-sm font-medium transition-colors ${
+          pathname === "/classes" ? "text-primary" : "text-muted-foreground"
+        } hover:text-primary`}
+      >
+        Aulas
+      </Link>
     </nav>
   );
 }
