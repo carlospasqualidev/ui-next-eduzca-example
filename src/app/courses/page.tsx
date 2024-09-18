@@ -14,12 +14,13 @@ export default function Courses() {
   return (
     <>
       <div>
-        <div className="flex">
+        <div className="md:flex">
           <UserDetails />
 
-          <div className="flex">
+          <div className="flex flex-col md:flex-row">
             <Separator orientation="vertical" className="mx-4" />
             <div>
+              <Separator orientation="horizontal" className="my-4 md:hidden" />
               <h2 className="text-2xl font-semibold tracking-tight">
                 Meus Cursos
               </h2>
@@ -28,13 +29,13 @@ export default function Courses() {
                 concluir seus cursos do que imagina.
               </p>
               <Separator className="my-4" />
-              <div className="relative">
-                <div className="flex space-x-4 pb-4">
+              <div>
+                <div className="flex justify-center gap-4 flex-wrap">
                   {listenNowAlbums.map((album) => (
                     <AlbumArtwork
                       key={album.name}
                       album={album}
-                      className="w-[250px]"
+                      className="w-[150px] md:w-[250px]"
                       aspectRatio="portrait"
                       width={250}
                       height={330}
@@ -51,8 +52,8 @@ export default function Courses() {
                 </p>
               </div>
               <Separator className="my-4" />
-              <div className="relative">
-                <div className="flex space-x-4 pb-4">
+              <div>
+                <div className="flex justify-center gap-4 flex-wrap">
                   {madeForYouAlbums.map((album) => (
                     <AlbumArtwork
                       key={album.name}

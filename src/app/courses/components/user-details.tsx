@@ -18,13 +18,13 @@ const album = listenNowAlbums[0];
 export function UserDetails() {
   return (
     <div className={"flex flex-col gap-4"}>
-      <div className="rounded-full overflow-hidden w-64 h-64 border-[#E4E4E7] border-2 dark:border-[#27272A]">
+      <div className="rounded-full overflow-hidden w-64 h-64 border-[#E4E4E7] border-2 dark:border-[#27272A] mx-auto">
         <Image
           src={album.cover}
           alt={album.name}
           width={256}
           height={256}
-          className="object-cover"
+          className="object-cove"
         />
       </div>
       <div>
