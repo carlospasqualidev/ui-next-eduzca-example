@@ -3,12 +3,11 @@ import { listenNowAlbums } from "../data/albums";
 import Image from "next/image";
 
 const album = listenNowAlbums[0];
-interface UserDetailsProps extends React.HTMLAttributes<HTMLDivElement> {}
 
-export function UserDetails({ className }: UserDetailsProps) {
+export function UserDetails() {
   return (
-    <div className={cn("pb-12", className)}>
-      <div className="py-4 px-8  flex justify-center">
+    <div className={"flex flex-col gap-4"}>
+      <div className="flex ">
         <Image
           src={album.cover}
           alt={album.name}
@@ -16,6 +15,12 @@ export function UserDetails({ className }: UserDetailsProps) {
           height={250}
           className={cn("object-cover rounded-md aspect-square")}
         />
+      </div>
+      <div>
+        <p className="text-lg font-medium leading-none">Carlos Pasquali</p>
+        <p className="text-sm text-muted-foreground">
+          carlos.pasquali.dev@gmail.com
+        </p>
       </div>
     </div>
   );

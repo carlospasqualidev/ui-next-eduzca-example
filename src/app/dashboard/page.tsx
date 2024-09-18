@@ -1,12 +1,11 @@
 import { Metadata } from "next";
-// import Image from "next/image";
 import { CalendarDateRangePicker } from "./components/date-range-picker";
-import { Overview } from "./components/overview";
-import { RecentSales } from "./components/recent-sales";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-
 import { Button } from "@/components/ui/button";
-import { Summary } from "./components/summary";
+
+import { MonetaryOverview, UserOverview } from "./components/overview";
+import { RecentSales, UserPoints } from "./components/recent-sales";
+import { MonetarySummary, UsersSummary } from "./components/summary";
 
 export const metadata: Metadata = {
   title: "Dashboard",
@@ -30,17 +29,18 @@ export default function Dashboard() {
             <TabsTrigger value="users">Usuários</TabsTrigger>
           </TabsList>
           <TabsContent value="overview" className="space-y-4">
-            <Summary />
+            <MonetarySummary />
             <div className="grid gap-y-4 md:gap-x-4 md:grid-cols-2 lg:grid-cols-7">
-              <Overview />
+              <MonetaryOverview />
               <RecentSales />
             </div>
           </TabsContent>
+
           <TabsContent value="users" className="space-y-4">
-            <Summary />
+            <UsersSummary />
             <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-7">
-              <Overview />
-              <RecentSales />
+              <UserOverview />
+              <UserPoints />
             </div>
           </TabsContent>
         </Tabs>

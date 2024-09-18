@@ -112,3 +112,98 @@ export function RecentSales() {
     </Card>
   );
 }
+
+const userRanking = [
+  {
+    acronym: "RM",
+    name: "Rafael Medeiros",
+    description: "rafael.medeiros@email.com",
+    value: "2500",
+  },
+  {
+    acronym: "BM",
+    name: "Beatriz Monteiro",
+    description: "beatriz.monteiro@email.com",
+    value: "2300",
+  },
+  {
+    acronym: "FP",
+    name: "Fernanda Pinheiro",
+    description: "fernanda.pinheiro@email.com",
+    value: "2100",
+  },
+  {
+    acronym: "GF",
+    name: "Gabriel Fernandes",
+    description: "gabriel.fernandes@email.com",
+    value: "1900",
+  },
+  {
+    acronym: "AM",
+    name: "Ana Martins",
+    description: "ana.martins@email.com",
+    value: "1800",
+  },
+  {
+    acronym: "SC",
+    name: "Sofia Carvalho",
+    description: "sofia.carvalho@email.com",
+    value: "1700",
+  },
+  {
+    acronym: "LR",
+    name: "Luana Ribeiro",
+    description: "luana.ribeiro@email.com",
+    value: "1600",
+  },
+  {
+    acronym: "JP",
+    name: "João Pereira",
+    description: "joao.pereira@email.com",
+    value: "1500",
+  },
+  {
+    acronym: "TV",
+    name: "Tiago Vieira",
+    description: "tiago.vieira@email.com",
+    value: "1400",
+  },
+  {
+    acronym: "LC",
+    name: "Lucas Costa",
+    description: "lucas.costa@email.com",
+    value: "1200",
+  },
+];
+
+export function UserPoints() {
+  return (
+    <Card className="col-span-3">
+      <CardHeader>
+        <CardTitle>Ranking de usuários</CardTitle>
+        <CardDescription>
+          Total de {userRanking.length} usuários.
+        </CardDescription>
+      </CardHeader>
+      <CardContent>
+        <ScrollArea className="h-80">
+          {userRanking.map((user) => (
+            <div key={user.name} className="flex items-center py-2 pr-3">
+              <Avatar className="h-9 w-9">
+                <AvatarImage alt="Avatar" />
+                <AvatarFallback>{user.acronym}</AvatarFallback>
+              </Avatar>
+              <div className="ml-4 space-y-1">
+                <p className="text-sm font-medium leading-none">{user.name}</p>
+                <p className="text-sm text-muted-foreground">
+                  {user.description}
+                </p>
+              </div>
+              <div className="ml-auto font-medium">{user.value} Pontos</div>
+            </div>
+          ))}
+        </ScrollArea>
+      </CardContent>
+    </Card>
+  );
+}
